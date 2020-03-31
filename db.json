@@ -3,72 +3,52 @@
     {
       "id": 1584927882080,
       "name": "Brian adam",
-      "username": "Backend developer"
+      "studyProgram": "Backend developer"
     },
     {
       "id": 1584921882080,
       "name": "Brian adam",
-      "username": "Backend developer"
-    },
-    {
-      "id": 1584921906657,
-      "name": "Esa kencana",
-      "username": "UI/UX designer"
-    },
-    {
-      "name": "Diko Mahendra",
-      "username": "frontend",
-      "id": 1585181817951
-    },
-    {
-      "name": "melisa febriani",
-      "username": "cooking",
-      "id": 1585182330558
+      "studyProgram": "Backend developer"
     },
     {
       "name": "muhammad adam",
-      "username": "mobile developer",
+      "studyProgram": "mobile developer",
       "id": 1585182357222
     },
     {
-      "name": "indri lestari",
-      "username": "backend",
+      "name": "indri lestari basari",
+      "studyProgram": "backend uye",
       "id": 1585185521958
     },
     {
       "name": "mira wiranti",
-      "username": "Casos",
+      "studyProgram": "Sersan Dunia Bawah",
       "id": 1585185585903
     },
     {
-      "name": "a",
-      "username": "",
-      "id": 1585191410936
-    },
-    {
-      "name": "a",
-      "username": "",
-      "id": 1585191412365
-    },
-    {
-      "name": "ASD",
-      "username": "zxc",
-      "id": 1585532116524
-    },
-    {
-      "name": "bvc",
-      "username": "bvc",
-      "id": 1585532435071
-    },
-    {
-      "name": "opx",
-      "username": "opx",
-      "id": 1585532725151
-    },
-    {
       "name": "dwi",
-      "username": "penguasa dunia",
+      "studyProgram": "Raja Dunia",
       "id": 1585533457143
+    },
+    {
+      "name": "aurel",
+      "studyProgram": "Ratu negara",
+      "id": 1585623168512
+    },
+    {
+      "id": 1585624205435,
+      "name": "ini cuma test",
+      "studyProgram": "Akatsuki"
+    },
+    {
+      "id": 1585624640148,
+      "name": "Pak Kardi",
+      "studyProgram": "Kepala Desa"
+    },
+    {
+      "id": 1585627173558,
+      "name": "naruto",
+      "studyProgram": "konoha"
     }
   ]
 }

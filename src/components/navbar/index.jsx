@@ -1,103 +1,107 @@
-import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import {
+  Navbar, Button, NavbarToggler, Collapse, Nav, NavItem, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input
+} from 'reactstrap'
 
-const Navbar = (props) => {
+const NavbarT = (props) => {
+  const [isNavbarVisible, setIsOpen] = useState(false)
+  const toggle = () => setIsOpen(!isNavbarVisible)
+
+  const [isCreateModalVisible, setCreateModal] = useState(false)
+  const modalToggle = () => setCreateModal(!isCreateModalVisible)
+
   return (
-    <Router>
-      <nav className='navbar navbar-expand-lg navbar-light bg-light rounded'>
-        <button
-          className='btn btn-default btn-info'
-          data-toggle='modal'
-          data-target='#exampleModal'
-          // onClick={props.buttonTambahSantri}
+    <div className='continer'>
+
+      <Navbar
+        color='light'
+        light
+        expand='md'
+        className='rounded'
+      >
+        <Button
+          color='info'
+          onClick={modalToggle}
         >
-          <i className='fa fa-user-plus' /> Tambah santri
-        </button>
+          <i className='fa fa-user-plus' aria-hidden='true' />
+          Tambah Santri
+        </Button>
 
         {/* MODAL */}
-        <div className='modal fade' id='exampleModal' tabIndex='-1' role='dialog' aria-labelledby='Updatedata' aria-hidden='true'>
-          <div className='modal-dialog' role='document'>
-            <div className='modal-content'>
-              <div className='modal-header'>
-                <h5 className='modal-title text-dark' id='Updatedata'>Tambah Santri</h5>
-                <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-                  <span aria-hidden='true'>&times;</span>
-                </button>
-              </div>
-              <div className='modal-body text-dark'>
-                <label htmlFor='exampleInputEmail1'>Nama Santri</label>
-                <input
-                  type='email'
-                  className='form-control'
-                  aria-describedby='emailHelp'
-                  placeholder='Nama Santri..'
+        <Modal isOpen={isCreateModalVisible} toggle={modalToggle}>
+          <ModalHeader toggle={modalToggle}>Tambah Santri</ModalHeader>
+          <ModalBody>
+            <Form>
+              <FormGroup>
+                <Label for='nama'>Nama Santri</Label>
+                <Input
+                  type='text'
                   name='name'
-                  onChange={props.onHandleInput}
+                  id='name'
+                  placeholder='Nama Santri'
+                  onChange={(e) => props.onHandleInput(e)}
                   value={props.postDataSantri.name}
                 />
-                <label htmlFor='exampleInputEmail1' className='mt-4'>Jurusan</label>
-                <input
-                  type='email'
-                  className='form-control'
-                  aria-describedby='emailHelp'
-                  placeholder='Jurusan..'
-                  name='username'
+              </FormGroup>
+              <FormGroup>
+                <Label for='nama'>Jurusan Santri</Label>
+                <Input
+                  type='text'
+                  name='studyProgram'
+                  id='studyProgram'
+                  placeholder='Nama Santri'
                   onChange={props.onHandleInput}
-                  value={props.postDataSantri.username}
+                  value={props.postDataSantri.studyProgram}
                 />
-              </div>
-              <div className='modal-footer'>
-                <button type='button' className='btn btn-secondary' data-dismiss='modal'>Close</button>
-                <button
-                  type='button'
-                  className='btn btn-success'
-                  onClick={() => props.simpanDataSantri()}
-                >
-                  Simpan
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+              </FormGroup>
+            </Form>
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              color='primary'
+              onClick={() => {
+                modalToggle()
+                props.onHandlePost()
+              }}
+            >
+              Simpan
+            </Button>
+            <Button
+              color='secondary'
+              onClick={modalToggle}
+            >
+              Batal
+            </Button>
+          </ModalFooter>
+        </Modal>
 
         {/* FORM INPUT */}
-        <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-          <span className='navbar-toggler-icon' />
-        </button>
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav'>
-            <li className='nav-item '>
-              <Link to='/Data_Santri' className='nav-link'> Data Santri </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/Aktifitas_Santri' className='nav-link'>Aktifitas Santri</Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/' className='nav-link'>Home</Link>
-            </li>
-          </ul>
-          <ul className='m-2 ml-auto'>
-            <li className='navbar-item ml-auto'>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isNavbarVisible} navbar>
+          <Nav className='ml-auto' navbar>
+            <NavItem>
               <input
                 className='form-control mr-sm-2'
                 type='search'
                 placeholder='Search'
                 aria-label='Search'
-                onChange={() => props.searchedSantri()}
+                value={props.value}
+                onChange={(e) => props.onSearchSantri(e)}
               />
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </Router>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
   )
 }
 
-Navbar.propTypes = {
+NavbarT.propTypes = {
+  postDataSantri: PropTypes.object,
+  value: PropTypes.string,
   onHandleInput: PropTypes.func,
-  simpanDataSantri: PropTypes.func,
-  searchedSantri: PropTypes.func,
-  postDataSantri: PropTypes.object
+  onHandlePost: PropTypes.func,
+  onSearchSantri: PropTypes.func
 }
-export default Navbar
+export default NavbarT
