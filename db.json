@@ -16,7 +16,7 @@
       "id": 1585182357222
     },
     {
-      "name": "indri lestari basari",
+      "name": "indri lestari basara",
       "studyProgram": "backend uye",
       "id": 1585185521958
     },
@@ -31,24 +31,9 @@
       "id": 1585533457143
     },
     {
-      "name": "aurel",
-      "studyProgram": "Ratu negara",
-      "id": 1585623168512
-    },
-    {
-      "id": 1585624205435,
-      "name": "ini cuma test",
-      "studyProgram": "Akatsuki"
-    },
-    {
       "id": 1585624640148,
       "name": "Pak Kardi",
       "studyProgram": "Kepala Desa"
-    },
-    {
-      "id": 1585627173558,
-      "name": "naruto",
-      "studyProgram": "konoha"
     }
   ]
 }

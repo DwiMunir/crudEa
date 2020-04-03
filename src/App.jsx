@@ -3,7 +3,7 @@ import Header from './components/header'
 import NavbarT from './components/navbar'
 import Contents from './components/contents'
 import axios from 'axios'
-import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+import PaginationButton from './components/pagination'
 
 class App extends Component {
   constructor (props) {
@@ -180,7 +180,7 @@ class App extends Component {
   // }
 
   render () {
-    const { onHandleInput, onHandlePost, onHandleDelete, onHandleUpdate, onDataUpdate, onSearchSantri, onPreviousPage, onNextPage } = this
+    const { onHandleInput, onHandlePost, onHandleDelete, onHandleUpdate, onDataUpdate, onSearchSantri, onPreviousPage, onNextPage, onMovePage } = this
     const { postDataSantri, value, paginationNumbers, dataSantriWithLimit, currentPage } = this.state
     return (
       <div className='bg-info text-light pt-2 px-2' style={{ overflowY: 'hidden', minHeight: '100vh' }}>
@@ -202,40 +202,14 @@ class App extends Component {
           onHandleDelete={onHandleDelete}
         />
 
-        <Pagination
-          className='d-flex justify-content-end container-fluid pb-0 mb-0'
-        >
-          <PaginationItem
-            onClick={onPreviousPage}
-            disabled={currentPage <= 1}
-          >
-            <PaginationLink first>
-              Previous
-            </PaginationLink>
-          </PaginationItem>
-          {paginationNumbers.map((item, index) => (
-            <PaginationItem
-              key={index}
-              active={currentPage === item}
-            >
-              <PaginationLink
-                id={item}
-                onClick={(event) => this.onMovePage(event)}
-              >
-                {item}
-              </PaginationLink>
-            </PaginationItem>
+        <PaginationButton
+          onPreviousPage={onPreviousPage}
+          onNextPage={onNextPage}
+          currentPage={currentPage}
+          paginationNumbers={paginationNumbers}
+          onMovePage={onMovePage}
+        />
 
-          ))}
-          <PaginationItem
-            onClick={onNextPage}
-            disabled={currentPage === paginationNumbers.length}
-          >
-            <PaginationLink last>
-              Next
-            </PaginationLink>
-          </PaginationItem>
-        </Pagination>
       </div>
     )
   }
