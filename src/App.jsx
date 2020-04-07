@@ -84,8 +84,8 @@ class App extends Component {
 
   onDataUpdate = (e) => {
     this.setState({
-      postDataSantri: e,
-      isUpdate: true
+      isUpdate: true,
+      postDataSantri: e
     })
   }
 

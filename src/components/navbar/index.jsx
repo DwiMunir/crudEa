@@ -27,17 +27,54 @@ class NavbarT extends Component {
     const button = {
       color: 'info',
       onClick: () => this.actionModal.onToggle(),
-      tittle: 'Tambah Santri'
+      tittleButton: 'Tambah Santri',
+      outline: null,
+      className: ''
     }
+
     const modal = {
       toggleModal: () => this.actionModal.onToggle(),
       isOpen: this.state.showModal,
       tittleHeader: 'Tambah Data Santri',
-      inputName: 'name',
-      tittleName: 'Nama Santri',
-      tittleStudy: 'Jurusan Santri',
-      inputStudy: 'studyProgram',
-      ref: ref => { this.actionModal = ref }
+      tittleButton: 'Simpan',
+      colorButtonLeft: 'primary',
+      colorButtonRight: 'secondary',
+      ref: ref => { this.actionModal = ref },
+      multiInput: [
+        {
+          name: 'name',
+          tittleInput: 'Nama Santri',
+          onChange: this.props.onHandleInput,
+          placeholder: 'masukkan nama',
+          value: this.props.postDataSantri.name
+        },
+        {
+          name: 'studyProgram',
+          tittleInput: 'Jurusan Santri',
+          onChange: this.props.onHandleInput,
+          placeholder: 'masukkan jurusan',
+          value: this.props.postDataSantri.studyProgram
+        }
+      ],
+      buttonModal: [
+        {
+          color: 'primary',
+          className: '',
+          onClick: () => {
+            this.actionModal.onToggle()
+            this.props.onHandlePost()
+          },
+          tittleButton: 'Simpan',
+          outline: ''
+        },
+        {
+          color: 'secondary',
+          className: '',
+          onClick: () => this.actionModal.onToggle(),
+          tittleButton: 'Batal',
+          outline: true
+        }
+      ]
     }
     const collapse = {
       onSearchSantri: this.props.onSearchSantri,

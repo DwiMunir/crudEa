@@ -86,11 +86,6 @@
       "id": 1585878334579
     },
     {
-      "name": "lk",
-      "studyProgram": "lk",
-      "id": 1585878341419
-    },
-    {
       "name": "nh",
       "studyProgram": "bj",
       "id": 1585878348460
@@ -106,14 +101,20 @@
       "studyProgram": "santri baru"
     },
     {
-      "id": 1585964347258,
-      "name": "ini baru",
-      "studyProgram": "ini baru"
+      "id": 1586069683220,
+      "name": "baru h",
+      "studyProgram": "baru 009",
+      "": "barua"
     },
     {
-      "id": 1585965077978,
-      "name": "01",
+      "id": 1586097273315,
+      "name": "011",
       "studyProgram": "baru"
+    },
+    {
+      "id": 1586226193680,
+      "name": "baru01",
+      "studyProgram": "01"
     }
   ]
 }

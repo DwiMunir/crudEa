@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Form, Input, Collapse, NavItem, Nav } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Form, Input, NavItem, Nav } from 'reactstrap'
 
 const ActionButton = (props) => {
   return (
@@ -10,8 +10,31 @@ const ActionButton = (props) => {
       className={props.className}
       outline={props.outline}
     >
-      {props.tittle}
+      {props.tittleButton}
     </Button>
+  )
+}
+
+const ActionGroupInput = (props) => {
+  return (
+    <FormGroup>
+      <Label for={props.name}>{props.tittleInput}</Label>
+      <ActionInput {...props} />
+    </FormGroup>
+  )
+}
+
+const ActionInput = (props) => {
+  return (
+    <Input
+      type={props.type}
+      name={props.name}
+      className={props.className}
+      id={props.name}
+      placeholder={props.placeholder}
+      onChange={(e) => props.onChange(e)}
+      value={props.value}
+    />
   )
 }
 
@@ -33,7 +56,7 @@ class ActionModal extends Component {
     return (
       <Modal
         isOpen={this.state.showModal}
-        toggle={this.toggleModal}
+        toggle={this.toggleVisible}
       >
         {this.ActionHeader()}
         {this.ActionBody()}
@@ -45,32 +68,25 @@ class ActionModal extends Component {
 
   ActionHeader () {
     return (
-      <ModalHeader>
+      <ModalHeader
+        className={this.props.classNameHeader}
+        toggle={this.props.deleteModal ? null : this.onToggle}
+      >
         {this.props.tittleHeader}
       </ModalHeader>
     )
   }
 
   ActionBody () {
-    const nameSantri = {
-      name: this.props.inputName,
-      tittleInput: this.props.tittleName,
-      placeholder: this.props.tittleName,
-      onChange: (e) => this.props.onHandleInput(e),
-      value: this.props.postDataSantri.name
-    }
-    const studySantri = {
-      name: this.props.inputStudy,
-      tittleInput: this.props.tittleStudy,
-      onChange: this.props.onHandleInput,
-      placeholder: this.props.tittleStudy,
-      value: this.props.postDataSantri.studyProgram
-    }
     return (
-      <ModalBody className={this.props.className}>
+      <ModalBody className={this.props.classNameBody}>
         <Form>
-          <ActionGroupInput {...nameSantri} />
-          <ActionGroupInput {...studySantri} />
+          {this.props.multiInput.map((item, index) => (
+            <ActionGroupInput
+              key={index}
+              {...item}
+            />
+          ))}
         </Form>
       </ModalBody>
     )
@@ -86,48 +102,22 @@ class ActionModal extends Component {
   }
 
   ActionFooter () {
-    const saveButton = {
-      color: 'primary',
-      onClick: () => {
-        this.props.onHandlePost()
-        this.onToggle()
-      },
-      tittle: 'Simpan'
-    }
-
-    const cancelButton = {
-      color: 'secondary',
-      onClick: () => this.onToggle(),
-      tittle: 'Batal'
-    }
     return (
-      <ModalFooter>
-        <ActionButton {...saveButton} />
-        <ActionButton {...cancelButton} />
+      <ModalFooter
+        className={this.props.classNameFooter}
+      >
+        {this.props.buttonModal.map((item, index) => (
+          <ActionButton
+            onClick={() => {
+              item.onClick()
+            }}
+            key={index}
+            {...item}
+          />
+        ))}
       </ModalFooter>
     )
   }
-}
-const ActionGroupInput = (props) => {
-  return (
-    <FormGroup>
-      <Label for={props.name}>{props.tittleInput}</Label>
-      <ActionInput {...props} />
-    </FormGroup>
-  )
-}
-const ActionInput = (props) => {
-  return (
-    <Input
-      type={props.type}
-      name={props.name}
-      className={props.className}
-      id={props.name}
-      placeholder={props.placeholder}
-      onChange={props.onChange}
-      value={props.value}
-    />
-  )
 }
 
 const ActionCollapse = (props) => {
@@ -135,7 +125,7 @@ const ActionCollapse = (props) => {
     className: 'form-control mr-sm-2',
     type: 'search',
     placeholder: 'Search',
-    onChange: (e) => props.onSearchSantri(e)
+    onChange: props.onSearchSantri
   }
   return (
     <Nav className='ml-auto' navbar>
@@ -149,9 +139,12 @@ const ActionCollapse = (props) => {
 ActionButton.propTypes = {
   color: PropTypes.string,
   onClick: PropTypes.func,
-  tittle: PropTypes.string,
+  tittleButton: PropTypes.string,
   className: PropTypes.string,
-  outline: PropTypes.bool
+  outline: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.bool
+  ])
 }
 
 ActionButton.defaultProps = {
@@ -170,9 +163,19 @@ ActionModal.propTypes = {
   tittleHeader: PropTypes.string,
   className: PropTypes.string,
   postDataSantri: PropTypes.object,
+  classNameBody: PropTypes.string,
+  classNameHeader: PropTypes.string,
+  classNameFooter: PropTypes.string,
+  colorButtonLeft: PropTypes.string,
+  colorButtonRight: PropTypes.string,
+  tittleButton: PropTypes.string,
+  multiInput: PropTypes.array,
+  editModal: PropTypes.bool,
+  deleteModal: PropTypes.bool,
+  buttonModal: PropTypes.array,
   onHandleInput: PropTypes.func,
   onHandlePost: PropTypes.func,
-  toggleModal: PropTypes.func
+  onClick: PropTypes.func
 }
 ActionGroupInput.propTypes = {
   name: PropTypes.string,
