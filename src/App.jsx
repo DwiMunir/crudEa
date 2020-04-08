@@ -91,7 +91,7 @@ class App extends Component {
   }
 
   onHandleDelete = (id) => {
-    axios.delete(`http://my-json-server.typicode.com/DwiMunir/crudEa/posts/${id}`)
+    axios.delete(`http://my-json-server.typicode.com/DwiMunir/crudEa/${id}`)
       .then(() => {
         // console.log(res)
         this.onGetDataSantri()
