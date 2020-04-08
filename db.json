@@ -1,118 +1,120 @@
-[
-  {
-    "id": 1584927882080,
-    "name": "Brian adam",
-    "studyProgram": "Backend developer"
-  },
-  {
-    "id": 1584921882080,
-    "name": "Brian adam",
-    "studyProgram": "Backend developer"
-  },
-  {
-    "name": "muhammad adam",
-    "studyProgram": "mobile developer",
-    "id": 1585182357222
-  },
-  {
-    "name": "indri lestari basara",
-    "studyProgram": "backend uye",
-    "id": 1585185521958
-  },
-  {
-    "name": "mira wiranti",
-    "studyProgram": "Sersan Dunia Bawah",
-    "id": 1585185585903
-  },
-  {
-    "name": "dwi",
-    "studyProgram": "Raja Dunia",
-    "id": 1585533457143
-  },
-  {
-    "id": 1585624640148,
-    "name": "Pak Kardi",
-    "studyProgram": "Kepala Desa"
-  },
-  {
-    "id": 1585878227907,
-    "name": "baru1",
-    "studyProgram": "baru"
-  },
-  {
-    "name": "02",
-    "studyProgram": "02",
-    "id": 1585878235284
-  },
-  {
-    "name": "03",
-    "studyProgram": "03",
-    "id": 1585878242110
-  },
-  {
-    "name": "04",
-    "studyProgram": "04",
-    "id": 1585878258804
-  },
-  {
-    "name": "05",
-    "studyProgram": "05",
-    "id": 1585878303133
-  },
-  {
-    "name": "sh",
-    "studyProgram": "jhs",
-    "id": 1585878309728
-  },
-  {
-    "name": "as",
-    "studyProgram": "as",
-    "id": 1585878316227
-  },
-  {
-    "name": "bg",
-    "studyProgram": "bg",
-    "id": 1585878322078
-  },
-  {
-    "name": "bg",
-    "studyProgram": "bj",
-    "id": 1585878327955
-  },
-  {
-    "name": "nj",
-    "studyProgram": "nj",
-    "id": 1585878334579
-  },
-  {
-    "name": "nh",
-    "studyProgram": "bj",
-    "id": 1585878348460
-  },
-  {
-    "id": 1585894872458,
-    "name": "agus",
-    "studyProgram": "kotak"
-  },
-  {
-    "id": 1585963068729,
-    "name": "santri baru",
-    "studyProgram": "santri baru"
-  },
-  {
-    "id": 1586069683220,
-    "name": "baru h",
-    "studyProgram": "baru 009",
-    "": "barua"
-  },
-  {
-    "id": 1586097273315,
-    "name": "011",
-    "studyProgram": "baru"
-  },
-  {
-    "id": 1586226193680,
-    "name": "baru01",
-    "studyProgram": "01"
-  }
-]
+{
+  "posts": [
+    {
+      "id": 1584927882080,
+      "name": "Brian adam",
+      "studyProgram": "Backend developer"
+    },
+    {
+      "id": 1584921882080,
+      "name": "Brian adam",
+      "studyProgram": "Backend developer"
+    },
+    {
+      "name": "muhammad adam",
+      "studyProgram": "mobile developer",
+      "id": 1585182357222
+    },
+    {
+      "name": "indri lestari basara",
+      "studyProgram": "backend uye",
+      "id": 1585185521958
+    },
+    {
+      "name": "mira wiranti",
+      "studyProgram": "Sersan Dunia Bawah",
+      "id": 1585185585903
+    },
+    {
+      "name": "dwi",
+      "studyProgram": "Raja Dunia",
+      "id": 1585533457143
+    },
+    {
+      "id": 1585624640148,
+      "name": "Pak Kardi",
+      "studyProgram": "Kepala Desa"
+    },
+    {
+      "id": 1585878227907,
+      "name": "baru1",
+      "studyProgram": "baru"
+    },
+    {
+      "name": "02",
+      "studyProgram": "02",
+      "id": 1585878235284
+    },
+    {
+      "name": "03",
+      "studyProgram": "03",
+      "id": 1585878242110
+    },
+    {
+      "name": "04",
+      "studyProgram": "04",
+      "id": 1585878258804
+    },
+    {
+      "name": "05",
+      "studyProgram": "05",
+      "id": 1585878303133
+    },
+    {
+      "name": "sh",
+      "studyProgram": "jhs",
+      "id": 1585878309728
+    },
+    {
+      "name": "as",
+      "studyProgram": "as",
+      "id": 1585878316227
+    },
+    {
+      "name": "bg",
+      "studyProgram": "bg",
+      "id": 1585878322078
+    },
+    {
+      "name": "bg",
+      "studyProgram": "bj",
+      "id": 1585878327955
+    },
+    {
+      "name": "nj",
+      "studyProgram": "nj",
+      "id": 1585878334579
+    },
+    {
+      "name": "nh",
+      "studyProgram": "bj",
+      "id": 1585878348460
+    },
+    {
+      "id": 1585894872458,
+      "name": "agus",
+      "studyProgram": "kotak"
+    },
+    {
+      "id": 1585963068729,
+      "name": "santri baru",
+      "studyProgram": "santri baru"
+    },
+    {
+      "id": 1586069683220,
+      "name": "baru h",
+      "studyProgram": "baru 009",
+      "": "barua"
+    },
+    {
+      "id": 1586097273315,
+      "name": "011",
+      "studyProgram": "baru"
+    },
+    {
+      "id": 1586226193680,
+      "name": "baru01",
+      "studyProgram": "01"
+    }
+  ]
+}
