@@ -1,0 +1,40 @@
+.copy{
+    text-decoration: none;
+    color:white;
+    transition: .5s;
+    font-size: 16px;
+    padding: 3px 1vw;
+    position: relative;
+    &::before{
+        content: '';
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        border-top: 5px solid red;
+        left: 0;
+        top: -2px;
+        transition: .5s;
+        box-shadow: 0 0 15px red;
+    }
+    &::after{
+        content: '';
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        border-bottom: 5px solid purple;
+        right: 0;
+        bottom: -2px;
+        transition: .5s;
+        box-shadow: 0 0 15px purple;
+    }
+    &:hover{
+        color: white;
+        text-decoration: none;
+    }
+    &:hover::before{
+        width: 100%;
+    }
+    &:hover::after{
+        width: 100%;
+    }
+}

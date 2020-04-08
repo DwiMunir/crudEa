@@ -3,6 +3,7 @@ import Header from './components/header'
 import NavbarT from './components/navbar'
 import Contents from './components/contents'
 import axios from 'axios'
+import './assets/style.scss'
 import PaginationButton from './components/pagination'
 
 class App extends Component {
@@ -183,7 +184,7 @@ class App extends Component {
     const { onHandleInput, onHandlePost, onHandleDelete, onHandleUpdate, onDataUpdate, onSearchSantri, onPreviousPage, onNextPage, onMovePage } = this
     const { postDataSantri, value, paginationNumbers, dataSantriWithLimit, currentPage } = this.state
     return (
-      <div className='bg-info text-light pt-2 px-2' style={{ overflowY: 'hidden', minHeight: '100vh' }}>
+      <div className='bg-info text-light pt-1 px-2' style={{ overflowY: 'hidden', minHeight: '100vh' }}>
         <Header />
         <NavbarT
           postDataSantri={postDataSantri}
@@ -209,6 +210,9 @@ class App extends Component {
           paginationNumbers={paginationNumbers}
           onMovePage={onMovePage}
         />
+        <div className='ml-3'>
+          &copy; 2020 || Template By <a className='copy' href='http://github.com/Diko99'>Diko Mahendra</a>
+        </div>
 
       </div>
     )
